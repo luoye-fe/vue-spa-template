@@ -1,7 +1,15 @@
+# OSX
 .DS_Store
+
+# Android/IJ
+.idea
+.gradle
+local.properties
+.project
+
+# node.js
 node_modules/
-dist/
 npm-debug.log
-selenium-debug.log
-test/unit/coverage
-test/e2e/reports
+
+# custom
+dist/
