@@ -1,4 +1,4 @@
-{
+export default {
 	"localdev": "",
 	"localtest": "",
 	"development": "",
