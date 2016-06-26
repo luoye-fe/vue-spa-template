@@ -4,13 +4,14 @@
   "description": "{{ description }}",
   "author": "{{ author }}",
   "private": true,
-  "scripts": {
-
-  },
+  "scripts": {},
   "dependencies": {
-
+    "vue": "^1.0.25",
+    "vue-resource": "^0.9.1",
+    "vue-router": "^0.7.13",
+    "vuex": "^0.8.0"
   },
   "devDependencies": {
-
+    "webpack": "^1.13.1"
   }
 }
