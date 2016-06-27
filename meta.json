@@ -18,7 +18,7 @@
         "projectID": {
             "type": "string",
             "required": false,
-            "message": "Your project ID in AMP. Press enter skip. ",
+            "message": "Your project ID in AMP. Press enter skip. "
         }
     },
     "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev\n\nDocumentation can be found at https://github.com/luoye-fe/vue-spa-template"
