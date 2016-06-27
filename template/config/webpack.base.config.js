@@ -23,7 +23,7 @@ export default {
 				test: /\.js$/,
 				loader: 'babel',
 				include: rootPath,
-				exclude: /node_modules/
+				exclude: path.join(rootPath, 'node_modules/')
 			}, {
 				test: /\.json$/,
 				loader: 'json'
@@ -42,7 +42,6 @@ export default {
 					name: 'static/fonts/[name].[hash:7].[ext]'
 				}
 			}
-
 		]
 	},
 	resolve: {

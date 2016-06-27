@@ -9,7 +9,5 @@ utils.mixin = (source, target) => {
 	return source;
 };
 
-import * as cookie from './cookie.js';
-utils.mixin(utils, cookie);
 
 export default utils;

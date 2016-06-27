@@ -18,7 +18,7 @@ const router = new Router({
 });
 
 router.map({
-	'/hello': {
+	'/': {
 		name: 'hello',
 		component: Hello
 	}
