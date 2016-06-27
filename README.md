@@ -26,21 +26,18 @@ $ npm run localdev
 
 ### 说明
 
-这个项目模版大部分内容来自 `vue-cli` 提供的官方 [`webpack`](https://github.com/vuejs-templates/webpack) 示例。  
+这个项目模版大部分内容来自 `vue-cli` 提供的官方 [webpack](https://github.com/vuejs-templates/webpack) 示例。  
 
 在原有基础上改进内容包括：  
 
-* 集成了 `vue` 全家桶，`vuex` `vue-router` `vue-resource` 开箱即用，不用纠结
+* 从配置文件到开发，全面支持 `ES6/7`
+
+* 集成 `vue` 全家桶，`vuex` `vue-router` `vue-resource` 开箱即用
 
 * 调整目录结构，适应内部开发习惯，也是多个项目下来的最佳实践
 
-* 调整打包策略，
+* 集成 `AMP` 接口平台，根据 AMP 的 `project ID` 自动设置 `vue-resource` 的根路径
 
-* 集成 `AMP` 接口平台，根据 AMP 的 `project ID` 设置 `vue-resource` 的根路径
-
-* 适应公司的四套环境，打包构建分不同环境有不同的策略
+* 调整打包策略，适应公司的四套环境，打包构建分不同环境有不同的策略
 
 * 提供格式化生成后的 `html` 插件
-
-
-
