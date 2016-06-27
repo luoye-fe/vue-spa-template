@@ -22,12 +22,12 @@ export default {
 		preLoaders: [{
 			test: /\.vue$/,
 			loader: 'eslint',
-			include: projectRoot,
+			include: rootPath,
 			exclude: /node_modules/
 		}, {
 			test: /\.js$/,
 		    loader: 'eslint',
-		    include: projectRoot,
+		    include: rootPath,
 		    exclude: /node_modules/
 		}],
 		{{/lint}}
