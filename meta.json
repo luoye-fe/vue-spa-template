@@ -46,5 +46,5 @@
     "filters": {
         ".eslintrc.js": "lint"
     },
-    "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev\n\nDocumentation can be found at https://github.com/luoye-fe/vue-spa-template"
+    "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run localdev\n\nDocumentation can be found at https://github.com/luoye-fe/vue-spa-template"
 }
