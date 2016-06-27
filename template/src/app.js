@@ -7,7 +7,7 @@ import VueAjax from 'vue-resource';
 Vue.use(VueAjax);
 
 import httpConfig from './config/http.js';
-// Vue.http.options.root = httpConfig[env];
+Vue.http.options.root = httpConfig[ENV]; // ENV from webpack plugins DefinePlugin
 
 import App from './app.vue';
 import Hello from './components/hello.vue';
@@ -25,3 +25,4 @@ router.map({
 });
 
 router.start(App, '#app');
+
