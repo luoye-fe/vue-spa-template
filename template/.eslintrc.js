@@ -1,7 +1,10 @@
-export default {
+module.exports = {
     root: true,
     parserOptions: {
         sourceType: 'module'
+    },
+    globals: {
+        ENV: false
     },
     {{#if_eq lintConfig "standard"}}
     extends: 'standard',
@@ -13,6 +16,8 @@ export default {
         'html'
     ],
     'rules': {
+    	indent: ["error", "tab"],
+    	semi: ["error", "always"],
     {{#if_eq lintConfig "standard"}}
         'arrow-parens': 0,
     {{/if_eq}}

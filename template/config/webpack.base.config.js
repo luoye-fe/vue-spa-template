@@ -23,12 +23,12 @@ export default {
 			test: /\.vue$/,
 			loader: 'eslint',
 			include: rootPath,
-			exclude: /node_modules/
+			exclude: path.join(rootPath, 'node_modules/')
 		}, {
 			test: /\.js$/,
 		    loader: 'eslint',
 		    include: rootPath,
-		    exclude: /node_modules/
+		    exclude: path.join(rootPath, 'node_modules/')
 		}],
 		{{/lint}}
 		loaders: [{

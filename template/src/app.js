@@ -13,8 +13,8 @@ import App from './app.vue';
 import Hello from './components/hello.vue';
 
 const router = new Router({
-    saveScrollPosition: true,
-    linkActiveClass: 'active'
+	saveScrollPosition: true,
+	linkActiveClass: 'active'
 });
 
 router.map({
@@ -25,7 +25,7 @@ router.map({
 });
 
 router.redirect({
-    '*': '/hello'
+	'*': '/hello'
 });
 
 router.start(App, '#app');

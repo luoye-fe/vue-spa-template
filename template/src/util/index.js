@@ -9,5 +9,4 @@ utils.mixin = (source, target) => {
 	return source;
 };
 
-
 export default utils;
