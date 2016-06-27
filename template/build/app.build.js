@@ -1,10 +1,10 @@
 import webpack from 'webpack';
 
 
-import baseWebpackConfig from '../config/webpack.base.config.js';
+import webpackConfig from '../config/webpack.build.config.js';
 
 
-webpack(baseWebpackConfig, (err, stats) => {
+webpack(webpackConfig, (err, stats) => {
 	console.log(stats);
 });
 

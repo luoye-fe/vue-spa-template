@@ -13,7 +13,7 @@ export default {
 	output: {
 		path: baseConfig.build.assetsRoot,
 		publicPath: baseConfig.build.assetsPublicPath,
-		filename: '[name].js'
+		filename: '[name].js',
 	},
 	module: {
 		loaders: [{
@@ -27,42 +27,30 @@ export default {
 			}, {
 				test: /\.json$/,
 				loader: 'json'
-			},
-			// {
-			// 	test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-			// 	loader: 'url',
-			// 	query: {
-			// 		limit: 10000,
-			// 		name: utils.assetsPath('img/[name].[hash:7].[ext]')
-			// 	}
-			// }, {
-			// 	test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-			// 	loader: 'url',
-			// 	query: {
-			// 		limit: 10000,
-			// 		name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
-			// 	}
-			// }
+			}, {
+				test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+				loader: 'url',
+				query: {
+					limit: 10000,
+					name: 'static/img/[name].[hash:7].[ext]'
+				}
+			}, {
+				test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+				loader: 'url',
+				query: {
+					limit: 10000,
+					name: 'static/fonts/[name].[hash:7].[ext]'
+				}
+			}
+
 		]
 	},
-	plugins: [
-		new webpack.optimize.CommonsChunkPlugin({
-			name: 'vendor',
-			minChunks: function(module, count) {
-				return (
-					module.resource && /\.js$/.test(module.resource) && module.resource.indexOf(path.join(__dirname, '../node_modules')) === 0
-				)
-			}
-		}),
-		new webpack.optimize.CommonsChunkPlugin({
-			name: 'manifest',
-			chunks: ['vendor']
-		})
-	],
 	resolve: {
 		extensions: ['', '.js', '.vue'],
 		alias: {
-
+			utils: path.join(rootPath, './src/util/index.js'),
+			store: path.join(rootPath, './src/store/index.js'),
+			actions: path.join(rootPath, './src/store/actions/index.js')
 		}
-	},
+	}
 }

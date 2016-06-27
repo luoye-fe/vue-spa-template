@@ -4,7 +4,7 @@ const pwd = __dirname;
 
 export default {
 	server: {
-		port: 9090
+		port: 5657
 	},
 	build: {
 		view: path.join(pwd, '../dist/index.html'),
