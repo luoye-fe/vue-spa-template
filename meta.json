@@ -41,7 +41,7 @@
                 "value": "none",
                 "short": "none"
             }]
-        },
+        }
     },
     "filters": {
         ".eslintrc.js": "lint"
