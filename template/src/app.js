@@ -18,11 +18,14 @@ const router = new Router({
 });
 
 router.map({
-	'/': {
+	'/hello': {
 		name: 'hello',
 		component: Hello
 	}
 });
 
-router.start(App, '#app');
+router.redirect({
+    '*': '/hello'
+});
 
+router.start(App, '#app');
