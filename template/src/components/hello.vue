@@ -23,7 +23,7 @@
 		<p>集成 <code>AMP</code> 接口平台，根据 AMP 的 <code>project ID</code> 自动设置 <code>vue-resource</code> 的根路径</p>
 		<p>调整打包策略，适应公司的四套环境，打包构建分不同环境有不同的策略</p>
 		<p>打包时向前端注入环境变量 <code>ENV</code>，前端可以根据这个做不同处理，随之更改了一些需要同步更改的配置</p>
-		<p>去掉表态的 <code>eslint</code> 规则</p>
+		<p>去掉变态的 <code>eslint</code> 规则</p>
 		<p>提供格式化生成后的 <code>html</code> 插件</p>
 	</div>
 </template>
