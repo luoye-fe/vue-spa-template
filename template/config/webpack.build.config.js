@@ -11,7 +11,7 @@ import { cssLoaders } from '../build/utils.js';
 
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import FormatHtmlPlugin from '../build/formatHtml.js';
+import FormatHtmlPlugin from '../plugin/formatHtml.js';
 
 import baseWebpackConfig from './webpack.base.config.js';
 
@@ -56,7 +56,7 @@ webpackConfig = merge(baseWebpackConfig, {
 	]
 })
 
-if (env === 'production') {
+if (env === 'production' || env === 'pre-production') {
 	process.env.NODE_ENV = 'production';
 	webpackConfig.plugins.push(new webpack.DefinePlugin({
 		'process.env': 'production'
