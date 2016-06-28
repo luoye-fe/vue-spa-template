@@ -2,11 +2,11 @@ import path from 'path';
 
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
-export const cssLoaders = function(options) {
+export const cssLoaders = (options) => {
     options = options || {}
     function generateLoaders(loaders) {
-        var sourceLoader = loaders.map(function(loader) {
-            var extraParamChar
+        let sourceLoader = loaders.map((loader) => {
+            let extraParamChar;
             if (/\?/.test(loader)) {
                 loader = loader.replace(/\?/, '-loader?')
                 extraParamChar = '&'
@@ -35,11 +35,11 @@ export const cssLoaders = function(options) {
     }
 }
 
-export const styleLoaders = function(options) {
-    var output = []
-    var loaders = cssLoaders(options)
-    for (var extension in loaders) {
-        var loader = loaders[extension]
+export const styleLoaders = (options) => {
+    let output = []
+    const loaders = cssLoaders(options)
+    for (let extension in loaders) {
+        let loader = loaders[extension]
         output.push({
             test: new RegExp('\\.' + extension + '$'),
             loader: loader
