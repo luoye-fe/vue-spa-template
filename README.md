@@ -18,7 +18,7 @@
 
 ``` bash
 $ npm install -g vue-cli
-$ vue init luoye-fe/vue-spe-template my-project
+$ vue init luoye-fe/vue-spa-template my-project
 $ cd my-project
 $ npm install -d
 $ npm run localdev
