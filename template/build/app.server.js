@@ -9,6 +9,8 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 import baseConfig from '../config/base.config.js';
 import webpackConfig from '../config/webpack.server.config.js';
 
+import { openUrl } from './utils.js';
+
 const port = baseConfig.server.port || 5657;
 
 const app = express();
@@ -43,4 +45,5 @@ app.listen(port, (err) => {
 		return;
 	}
 	console.log('Listening at http://localhost:' + port + '\n');
+	openUrl('http://localhost:' + port);
 })

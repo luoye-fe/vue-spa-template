@@ -2,6 +2,8 @@ import path from 'path';
 
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
+import { exec } from 'child_process';
+
 export const cssLoaders = (options) => {
     options = options || {}
     function generateLoaders(loaders) {
@@ -46,4 +48,9 @@ export const styleLoaders = (options) => {
         })
     }
     return output
+}
+
+export const openUrl = (url) => {
+	const execStr = process.platform === 'win32' ? 'start' : 'open';
+	exec(`${execStr} ${url}`);
 }

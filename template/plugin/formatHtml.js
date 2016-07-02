@@ -2,9 +2,7 @@ import beautify from 'js-beautify';
 
 const html_beautify = beautify.html;
 
-const FormatHtmlPlugin = () => {
-
-}
+const FormatHtmlPlugin = () => {}
 
 FormatHtmlPlugin.prototype.apply = (compiler) => {
 	compiler.plugin('compilation', (compilation) => {
