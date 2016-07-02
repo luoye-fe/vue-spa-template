@@ -7,7 +7,7 @@ import env from './env.config.js';
 
 import baseConfig from './base.config.js';
 
-import { cssLoaders } from '../build/utils.js';
+import { cssLoaders } from '../support/utils.js';
 
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
@@ -30,6 +30,7 @@ webpackConfig = merge(baseWebpackConfig, {
 	},
 	plugins: [
 		new webpack.optimize.OccurenceOrderPlugin(),
+		// extract css string to file
 		new ExtractTextPlugin('static/css/[name].[contenthash].css'),
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendor',

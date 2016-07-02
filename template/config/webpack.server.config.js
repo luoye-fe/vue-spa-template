@@ -8,7 +8,8 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import baseWebpackConfig from './webpack.base.config.js';
 
 Object.keys(baseWebpackConfig.entry).forEach((name) => {
-	baseWebpackConfig.entry[name] = ['./build/server.client.js'].concat(baseWebpackConfig.entry[name])
+	// concat server.client.js to entry config for reload by webpack-hot-middleware
+	baseWebpackConfig.entry[name] = ['./support/server.client.js'].concat(baseWebpackConfig.entry[name])
 })
 
 let webpackConfig = {};

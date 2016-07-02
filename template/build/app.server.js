@@ -9,7 +9,7 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 import baseConfig from '../config/base.config.js';
 import webpackConfig from '../config/webpack.server.config.js';
 
-import { openUrl } from './utils.js';
+import { openUrl } from './support/utils.js';
 
 const port = baseConfig.server.port || 5657;
 
