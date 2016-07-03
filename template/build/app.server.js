@@ -24,6 +24,10 @@ const devMiddleware = webpackDevMiddleware(compiler, {
 	}
 })
 
+devMiddleware.waitUntilValid(() => {
+	openUrl('http://localhost:' + port);
+})
+
 const hotMiddleware = webpackHotMiddleware(compiler);
 
 compiler.plugin('compilation', (compilation) => {
@@ -45,5 +49,4 @@ app.listen(port, (err) => {
 		return;
 	}
 	console.log('Listening at http://localhost:' + port + '\n');
-	openUrl('http://localhost:' + port);
 })
