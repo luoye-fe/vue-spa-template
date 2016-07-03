@@ -15,10 +15,9 @@ export default {
 	output: {
 		path: baseConfig.build.assetsRoot,
 		publicPath: baseConfig.build.assetsPublicPath,
-		filename: '[name].js',
+		filename: '[name].js'
 	},
 	module: {
-		{{#lint}}
 		preLoaders: [{
 			test: /\.vue$/,
 			loader: 'eslint',
@@ -26,11 +25,10 @@ export default {
 			exclude: path.join(rootPath, 'node_modules/')
 		}, {
 			test: /\.js$/,
-		    loader: 'eslint',
-		    include: rootPath,
-		    exclude: path.join(rootPath, 'node_modules/')
+			loader: 'eslint',
+			include: rootPath,
+			exclude: path.join(rootPath, 'node_modules/')
 		}],
-		{{/lint}}
 		loaders: [{
 			test: /\.vue$/,
 			loader: 'vue'
@@ -66,14 +64,12 @@ export default {
 			actions: path.join(rootPath, './src/store/actions/index.js')
 		}
 	},
-	{{#lint}}
 	eslint: {
-	  	formatter: require('eslint-friendly-formatter')
+		formatter: require('eslint-friendly-formatter')
 	},
-	{{/lint}}
 	plugins: [
 		new webpack.DefinePlugin({
 			'ENV': JSON.stringify(env)
 		})
 	]
-}
+};
