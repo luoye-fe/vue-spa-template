@@ -15,11 +15,6 @@
             "type": "string",
             "message": "Author"
         },
-        "projectID": {
-            "type": "string",
-            "required": false,
-            "message": "Your project ID in AMP. Press enter skip. "
-        },
         "lint": {
             "type": "confirm",
             "message": "Use ESLint to lint your code?"
