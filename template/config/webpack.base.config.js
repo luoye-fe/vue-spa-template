@@ -60,8 +60,8 @@ export default {
 		extensions: ['', '.js', '.vue'],
 		alias: {
 			utils: path.join(rootPath, './src/util/index.js'),
-			store: path.join(rootPath, './src/store/index.js'),
-			actions: path.join(rootPath, './src/store/actions/index.js')
+			store: path.join(rootPath, './src/vuex/index.js'),
+			actions: path.join(rootPath, './src/vuex/actions/index.js')
 		}
 	},
 	eslint: {
