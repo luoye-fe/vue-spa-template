@@ -18,6 +18,7 @@ export default {
 		filename: '[name].js'
 	},
 	module: {
+		{{#lint}}
 		preLoaders: [{
 			test: /\.vue$/,
 			loader: 'eslint',
@@ -29,6 +30,7 @@ export default {
 			include: rootPath,
 			exclude: path.join(rootPath, 'node_modules/')
 		}],
+		{{/lint}}
 		loaders: [{
 			test: /\.vue$/,
 			loader: 'vue'
@@ -64,9 +66,11 @@ export default {
 			actions: path.join(rootPath, './src/vuex/actions/index.js')
 		}
 	},
+	{{#lint}}
 	eslint: {
 		formatter: require('eslint-friendly-formatter')
 	},
+	{{/lint}}
 	plugins: [
 		new webpack.DefinePlugin({
 			'ENV': JSON.stringify(env)
