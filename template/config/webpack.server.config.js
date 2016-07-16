@@ -1,5 +1,3 @@
-import path from 'path';
-
 import webpack from 'webpack';
 import merge from 'webpack-merge';
 
@@ -9,8 +7,8 @@ import baseWebpackConfig from './webpack.base.config.js';
 
 Object.keys(baseWebpackConfig.entry).forEach((name) => {
 	// concat server.client.js to entry config for reload by webpack-hot-middleware
-	baseWebpackConfig.entry[name] = ['./support/server.client.js'].concat(baseWebpackConfig.entry[name])
-})
+	baseWebpackConfig.entry[name] = ['./support/server.client.js'].concat(baseWebpackConfig.entry[name]);
+});
 
 let webpackConfig = {};
 
@@ -26,6 +24,6 @@ webpackConfig = merge(baseWebpackConfig, {
 			inject: true
 		})
 	]
-})
+});
 
 export default webpackConfig;

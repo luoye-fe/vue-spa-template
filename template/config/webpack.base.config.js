@@ -15,7 +15,7 @@ export default {
 	output: {
 		path: baseConfig.build.assetsRoot,
 		publicPath: baseConfig.build.assetsPublicPath,
-		filename: '[name].js',
+		filename: '[name].js'
 	},
 	module: {
 		{{#lint}}
@@ -26,9 +26,9 @@ export default {
 			exclude: path.join(rootPath, 'node_modules/')
 		}, {
 			test: /\.js$/,
-		    loader: 'eslint',
-		    include: rootPath,
-		    exclude: path.join(rootPath, 'node_modules/')
+			loader: 'eslint',
+			include: rootPath,
+			exclude: path.join(rootPath, 'node_modules/')
 		}],
 		{{/lint}}
 		loaders: [{
@@ -62,13 +62,13 @@ export default {
 		extensions: ['', '.js', '.vue'],
 		alias: {
 			utils: path.join(rootPath, './src/util/index.js'),
-			store: path.join(rootPath, './src/store/index.js'),
-			actions: path.join(rootPath, './src/store/actions/index.js')
+			store: path.join(rootPath, './src/vuex/index.js'),
+			actions: path.join(rootPath, './src/vuex/actions/index.js')
 		}
 	},
 	{{#lint}}
 	eslint: {
-	  	formatter: require('eslint-friendly-formatter')
+		formatter: require('eslint-friendly-formatter')
 	},
 	{{/lint}}
 	plugins: [
@@ -76,4 +76,4 @@ export default {
 			'ENV': JSON.stringify(env)
 		})
 	]
-}
+};

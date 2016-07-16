@@ -22,7 +22,11 @@ const devMiddleware = webpackDevMiddleware(compiler, {
 		colors: true,
 		chunks: false
 	}
-})
+});
+
+devMiddleware.waitUntilValid(() => {
+	openUrl('http://localhost:' + port);
+});
 
 const hotMiddleware = webpackHotMiddleware(compiler);
 
@@ -30,8 +34,8 @@ compiler.plugin('compilation', (compilation) => {
 	compilation.plugin('html-webpack-plugin-after-emit', (data, cb) => {
 		hotMiddleware.publish({ action: 'reload' });
 		cb();
-	})
-})
+	});
+});
 
 app.use(devMiddleware);
 app.use(hotMiddleware);
@@ -45,5 +49,4 @@ app.listen(port, (err) => {
 		return;
 	}
 	console.log('Listening at http://localhost:' + port + '\n');
-	openUrl('http://localhost:' + port);
-})
+});

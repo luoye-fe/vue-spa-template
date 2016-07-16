@@ -10,6 +10,6 @@ export default {
 		view: path.join(pwd, '../dist/index.html'),
 		assetsRoot: path.join(pwd, '../dist'),
 		assetsSubDirectory: 'static',
-		assetsPublicPath: '/',
+		assetsPublicPath: '/'
 	}
-}
+};

@@ -14,22 +14,22 @@ console.log(
 	'  Tip:\n' +
 	'  Built files are meant to be served over an HTTP server.\n' +
 	'  Opening index.html over file:// won\'t work.\n'
-)
+);
 
 const spinner = ora(`building for ${env}...`);
 spinner.start();
 
-const assetsPath = path.join(baseConfig.build.assetsRoot, './')
+const assetsPath = path.join(baseConfig.build.assetsRoot, './');
 rm('-rf', assetsPath);
 
 webpack(webpackConfig, function(err, stats) {
-	spinner.stop()
-	if (err) throw err
+	spinner.stop();
+	if (err) throw err;
 	process.stdout.write(stats.toString({
 		colors: true,
 		modules: false,
 		children: false,
 		chunks: false,
 		chunkModules: false
-	}) + '\n')
-})
+	}) + '\n');
+});

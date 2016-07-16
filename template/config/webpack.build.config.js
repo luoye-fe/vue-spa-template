@@ -37,7 +37,7 @@ webpackConfig = merge(baseWebpackConfig, {
 			minChunks: (module, count) => {
 				return (
 					module.resource && /\.js$/.test(module.resource) && module.resource.indexOf(path.join(__dirname, '../node_modules')) === 0
-				)
+				);
 			}
 		}),
 		new webpack.optimize.CommonsChunkPlugin({
@@ -55,7 +55,7 @@ webpackConfig = merge(baseWebpackConfig, {
 		}),
 		new FormatHtmlPlugin()
 	]
-})
+});
 
 if (env === 'production' || env === 'pre-production') {
 	process.env.NODE_ENV = 'production';
