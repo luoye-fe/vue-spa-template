@@ -2,7 +2,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 import { exec } from 'child_process';
 
-export const cssLoaders = (options) => {
+export const cssExtractLoaders = (options) => {
 	options = options || {};
 
 	function generateLoaders(loaders) {
@@ -36,17 +36,21 @@ export const cssLoaders = (options) => {
 	};
 };
 
-export const styleLoaders = (options) => {
-	let output = [];
-	const loaders = cssLoaders(options);
-	for (let extension in loaders) {
-		let loader = loaders[extension];
-		output.push({
-			test: new RegExp('\\.' + extension + '$'),
-			loader: loader
-		});
+export const vueCssLoaders = () => {
+	const join = (array) => {
+		let loaders = ['vue-style', ...array];
+		return loaders.join('!');
 	};
-	return output;
+
+	return {
+		css: join(['css']),
+		postcss: join(['css']),
+		less: join(['css', 'less']),
+		sass: join(['css', 'sass?indentedSyntax']),
+		scss: join(['css', 'sass']),
+		stylus: join(['css', 'stylus']),
+		styl: join(['css', 'stylus'])
+	};
 };
 
 export const openUrl = (url) => {
