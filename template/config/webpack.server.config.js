@@ -8,7 +8,6 @@ import baseWebpackConfig from './webpack.base.config.js';
 import { vueCssLoaders } from '../support/utils.js';
 
 Object.keys(baseWebpackConfig.entry).forEach((name) => {
-	// concat server.client.js to entry config for reload by webpack-hot-middleware
 	baseWebpackConfig.entry[name] = ['./support/server.client.js'].concat(baseWebpackConfig.entry[name]);
 });
 
