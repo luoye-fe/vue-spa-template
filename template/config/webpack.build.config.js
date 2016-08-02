@@ -59,9 +59,6 @@ webpackConfig = merge(baseWebpackConfig, {
 
 if (env === 'production' || env === 'pre-production') {
 	process.env.NODE_ENV = 'production';
-	webpackConfig.plugins.push(new webpack.DefinePlugin({
-		'process.env': 'production'
-	}));
 	webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({
 		compress: {
 			warnings: false

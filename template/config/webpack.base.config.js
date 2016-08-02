@@ -58,6 +58,11 @@ export default {
 			}
 		}]
 	},
+	{{#lint}}
+	eslint: {
+		formatter: require('eslint-friendly-formatter')
+	},
+	{{/lint}}
 	resolve: {
 		extensions: ['', '.js', '.vue'],
 		alias: {
@@ -66,14 +71,9 @@ export default {
 			actions: path.join(rootPath, './src/vuex/actions/index.js')
 		}
 	},
-	{{#lint}}
-	eslint: {
-		formatter: require('eslint-friendly-formatter')
-	},
-	{{/lint}}
 	plugins: [
 		new webpack.DefinePlugin({
-			'ENV': JSON.stringify(env)
+			'process.env': JSON.stringify(env)
 		})
 	]
 };
