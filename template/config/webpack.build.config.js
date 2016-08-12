@@ -7,11 +7,11 @@ import env from './env.config.js';
 
 import baseConfig from './base.config.js';
 
-import { cssLoaders } from '../support/utils.js';
+import { cssExtractLoaders } from '../support/utils.js';
 
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import FormatHtmlPlugin from '../plugin/formatHtml.js';
+import FormatHtmlPlugin from '../support/formatHtml.js';
 
 import baseWebpackConfig from './webpack.base.config.js';
 
@@ -19,7 +19,7 @@ let webpackConfig = {};
 
 webpackConfig = merge(baseWebpackConfig, {
 	vue: {
-		loaders: cssLoaders({
+		loaders: cssExtractLoaders({
 			extract: true
 		})
 	},
@@ -58,7 +58,11 @@ webpackConfig = merge(baseWebpackConfig, {
 });
 
 if (env === 'production' || env === 'pre-production') {
-	process.env.NODE_ENV = 'production';
+	webpackConfig.plugins.push(new webpack.DefinePlugin({
+		'process.env': {
+			NODE_ENV: '"production"'
+		}
+	}));
 	webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({
 		compress: {
 			warnings: false

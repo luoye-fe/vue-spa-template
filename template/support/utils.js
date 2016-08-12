@@ -36,23 +36,6 @@ export const cssExtractLoaders = (options) => {
 	};
 };
 
-export const vueCssLoaders = () => {
-	const join = (array) => {
-		let loaders = ['vue-style', ...array];
-		return loaders.join('!');
-	};
-
-	return {
-		css: join(['css']),
-		postcss: join(['css']),
-		less: join(['css', 'less']),
-		sass: join(['css', 'sass?indentedSyntax']),
-		scss: join(['css', 'sass']),
-		stylus: join(['css', 'stylus']),
-		styl: join(['css', 'stylus'])
-	};
-};
-
 export const openUrl = (url) => {
 	const execStr = process.platform === 'win32' ? 'start' : 'open';
 	exec(`${execStr} ${url}`);
