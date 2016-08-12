@@ -5,7 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 import baseWebpackConfig from './webpack.base.config.js';
 
-import { vueCssLoaders } from '../support/utils.js';
+import { cssExtractLoaders } from '../support/utils.js';
 
 Object.keys(baseWebpackConfig.entry).forEach((name) => {
 	baseWebpackConfig.entry[name] = ['./support/server.client.js'].concat(baseWebpackConfig.entry[name]);
@@ -26,7 +26,7 @@ webpackConfig = merge(baseWebpackConfig, {
 		})
 	],
 	vue: {
-		loaders: vueCssLoaders()
+		loaders: cssExtractLoaders()
 	}
 });
 
